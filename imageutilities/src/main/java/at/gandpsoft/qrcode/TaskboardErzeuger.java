@@ -53,7 +53,7 @@ public class TaskboardErzeuger implements QRCodePositionZuTaskboardZurodner {
 				}
 				for (Spalte spalte : spalten) {
 					if (middleX < spalte.getLeftX()) {
-						spalte.addEpic(new Epic(result.getText()))
+						spalte.addEpic(new Epic(result.getText()));
 						break;
 					}
 				}
@@ -70,7 +70,7 @@ public class TaskboardErzeuger implements QRCodePositionZuTaskboardZurodner {
 	private Result[] estimateQRCodes(Bild bild, String charset, Map hintMap)
 			throws FileNotFoundException, IOException, NotFoundException {
 		try {
-			BufferedImage image = ImageIO.read(getClass().getClassLoader().getResource(fileName));
+			BufferedImage image = bild.getImage();
 			BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(new BufferedImageLuminanceSource(image)));
 			QRCodeMultiReader multiReader = new QRCodeMultiReader();
 			return multiReader.decodeMultiple(binaryBitmap, hintMap);
