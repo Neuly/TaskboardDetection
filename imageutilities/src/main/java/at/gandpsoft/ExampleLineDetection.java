@@ -57,7 +57,7 @@ public class ExampleLineDetection {
 		// imageType, derivType);
 
 		List<LineParametric2D_F32> found = detector.detect(input);
-
+		
 		// display the results
 		ImageLinePanel gui = new ImageLinePanel();
 		gui.setBackground(image);

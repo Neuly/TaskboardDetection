@@ -5,9 +5,11 @@ import java.util.List;
 public class Spalte {
 
 	private int leftX;
-	private int rightX;
 	private String columnName;
 	private List<Epic> epics;
+
+	public Spalte(float f) {
+	}
 
 	public int getLeftX() {
 		return leftX;
@@ -16,15 +18,7 @@ public class Spalte {
 	public void setLeftX(int leftX) {
 		this.leftX = leftX;
 	}
-
-	public int getRightX() {
-		return rightX;
-	}
-
-	public void setRightX(int rightX) {
-		this.rightX = rightX;
-	}
-
+	
 	public String getColumnName() {
 		return columnName;
 	}
@@ -39,6 +33,10 @@ public class Spalte {
 
 	public void setEpics(List<Epic> epics) {
 		this.epics = epics;
+	}
+
+	public void addEpic(Epic epic) {
+		epics.add(epic);
 	}
 
 }

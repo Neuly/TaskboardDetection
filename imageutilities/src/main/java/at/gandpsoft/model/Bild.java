@@ -9,5 +9,9 @@ public class Bild {
 	public Bild(BufferedImage image) {
 		this.image = image;
 	}
+
+	public BufferedImage getImage() {
+		return image;
+	}
 	
 }

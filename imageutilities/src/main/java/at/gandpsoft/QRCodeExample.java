@@ -25,10 +25,10 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.multi.qrcode.QRCodeMultiReader;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-public class QRCode {
+public class QRCodeExample {
 
 	public static void main(String[] args) throws WriterException, IOException, NotFoundException {
-		new QRCode().run();
+		new QRCodeExample().run();
 	}
 
 	public void run() throws WriterException, IOException, NotFoundException {

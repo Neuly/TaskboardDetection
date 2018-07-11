@@ -1,6 +1,7 @@
 package at.gandpsoft.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Taskboard extends ArrayList<Spalte> {
 
@@ -8,6 +9,10 @@ public class Taskboard extends ArrayList<Spalte> {
 
 	public Taskboard() {
 		super();
+	}
+
+	public Taskboard(List<Spalte> spalten) {
+		super(spalten);
 	}
 	
 }
