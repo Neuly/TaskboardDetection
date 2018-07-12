@@ -1,4 +1,4 @@
-package at.graphi;
+package at.graphi.webcamsignal;
 
 import at.graphi.interfaces.ImageInput;
 import at.graphi.model.Bild;

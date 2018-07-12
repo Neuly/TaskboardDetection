@@ -2,7 +2,6 @@ package at.graphi.main;
 
 import java.util.List;
 
-import at.graphi.WebcamSignal;
 import at.graphi.exporter.ExcelExporter;
 import at.graphi.interfaces.CodeScanner;
 import at.graphi.interfaces.Exporter;
@@ -12,6 +11,7 @@ import at.graphi.model.Bild;
 import at.graphi.model.Spalte;
 import at.graphi.model.Taskboard;
 import at.graphi.qrcodescanner.QRCodeScanner;
+import at.graphi.webcamsignal.WebcamSignal;
 
 public class TaskboardErkennung {
 
