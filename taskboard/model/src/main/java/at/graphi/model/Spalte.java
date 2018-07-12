@@ -1,5 +1,6 @@
 package at.graphi.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Spalte {
@@ -10,6 +11,7 @@ public class Spalte {
 
 	public Spalte(float f) {
 		leftX = f;
+		epics = new ArrayList<>();
 	}
 
 	public float getLeftX() {

@@ -1,6 +1,5 @@
 package at.graphi.webcamsignal;
 
-import java.util.Arrays;
 import java.util.List;
 
 import com.github.sarxos.webcam.Webcam;
