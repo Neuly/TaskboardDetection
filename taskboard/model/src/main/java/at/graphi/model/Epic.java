@@ -1,10 +1,16 @@
 package at.graphi.model;
 
+import java.io.UnsupportedEncodingException;
+
 public class Epic {
 	private String epicText = "";
 
 	public Epic(String epicText) {
-		this.epicText = epicText;
+		setEpicText(epicText);
+	}
+
+	private void setEpicText(String epicText2) {
+		this.epicText = epicText2;
 	}
 
 	public String getEpicText() {
@@ -13,7 +19,7 @@ public class Epic {
 
 	@Override
 	public String toString() {
-		return "Epic:" + epicText;
+		return epicText.toString();
 	}
 
 }

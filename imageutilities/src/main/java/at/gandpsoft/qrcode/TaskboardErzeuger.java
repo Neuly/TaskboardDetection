@@ -49,6 +49,7 @@ public class TaskboardErzeuger implements QRCodePositionZuTaskboardZurodner {
 				}
 				for (Spalte spalte : spalten) {
 					if (middleX < spalte.getLeftX()) {
+						System.out.println(result.getText() + " " + result.getText().compareTo("Demo2"));
 						spalte.addEpic(new Epic(result.getText()));
 						break;
 					}

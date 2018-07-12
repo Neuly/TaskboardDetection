@@ -35,6 +35,7 @@ public class QRCodeScannerTest {
 		BufferedImage bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/qrcodes_multiple.png"));
 		Taskboard taskboard = qrCodeScanner.generateTaskboard(new Bild(bufferedImage), createSpalten());
 		assertThat(taskboard.getSpalten()).hasSize(2);
+		assertThat(taskboard.getSpalten().get(1).getEpics()).contains(new Epic("Demo2"));
 		assertThat(taskboard.getSpalten().get(0).getEpics()).contains(new Epic("Demo3"), new Epic("Demo1"));
 	}
 
