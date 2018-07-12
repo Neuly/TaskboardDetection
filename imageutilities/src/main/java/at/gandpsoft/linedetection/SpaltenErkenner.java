@@ -5,15 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.bridj.cpp.std.list;
-
 import at.gandpsoft.interfaces.Edger;
 import at.gandpsoft.model.Bild;
 import at.gandpsoft.model.Spalte;
 import boofcv.abst.feature.detect.line.DetectLineHoughPolar;
 import boofcv.factory.feature.detect.line.ConfigHoughPolar;
 import boofcv.factory.feature.detect.line.FactoryDetectLineAlgs;
-import boofcv.gui.feature.FancyInterestPointRender.Line;
 import boofcv.io.image.ConvertBufferedImage;
 import boofcv.struct.image.GrayS16;
 import boofcv.struct.image.GrayU8;

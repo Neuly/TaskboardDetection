@@ -27,7 +27,7 @@ public class ImageCapturer implements ImageInput {
 		return new Bild(webcam.getImage());
 	} 
 	
-	private List<Webcam> getListOfDefaultWebcams() {
+	public List<Webcam> getListOfDefaultWebcams() {
 		return Webcam.getWebcams();
 	}
 	
