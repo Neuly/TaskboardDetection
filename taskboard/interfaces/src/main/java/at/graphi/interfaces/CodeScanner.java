@@ -6,7 +6,7 @@ import at.graphi.model.Bild;
 import at.graphi.model.Spalte;
 import at.graphi.model.Taskboard;
 
-public interface QRCodePositionZuTaskboardZurodner {
+public interface CodeScanner {
 
 	public Taskboard generateTaskboard(Bild bild, List<Spalte> spalten);
 }

@@ -12,7 +12,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>at.graphi</groupId>
-			<artifactId>model</artifactId>
+			<artifactId>interfaces</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
