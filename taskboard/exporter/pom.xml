@@ -6,4 +6,12 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>exporter</artifactId>
+  
+  <dependencies>
+		<dependency>
+			<groupId>at.graphi</groupId>
+			<artifactId>model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 </project>
