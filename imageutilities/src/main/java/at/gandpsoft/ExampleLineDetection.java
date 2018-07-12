@@ -27,7 +27,7 @@ public class ExampleLineDetection {
 	// adjusts edge threshold for identifying pixels belonging to a line
 	private static final float edgeThreshold = 50;
 	// adjust the maximum number of found lines in the image
-	private static final int maxLines = 8;
+	private static final int maxLines = 10;
 
 	private static ListDisplayPanel listPanel = new ListDisplayPanel();
 

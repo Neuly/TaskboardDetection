@@ -6,7 +6,7 @@ import at.graphi.exporter.ExcelExporter;
 import at.graphi.interfaces.CodeScanner;
 import at.graphi.interfaces.Exporter;
 import at.graphi.interfaces.ImageInput;
-import at.graphi.kantenerkennung.KantenErkenner;
+import at.graphi.kantenerkennung.SpaltenErkenner;
 import at.graphi.model.Bild;
 import at.graphi.model.Spalte;
 import at.graphi.model.Taskboard;
@@ -23,7 +23,7 @@ public class TaskboardErkennung {
 		ImageInput imageInput = new WebcamSignal();
 		Bild bild = imageInput.captureImage();
 
-		KantenErkenner kantenErkenner = new KantenErkenner();
+		SpaltenErkenner kantenErkenner = new SpaltenErkenner();
 		List<Spalte> bestimmteSpalten = kantenErkenner.bestimmeSpalten(bild);
 
 		CodeScanner codeScanner = new QRCodeScanner();

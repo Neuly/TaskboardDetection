@@ -4,18 +4,19 @@ import java.util.List;
 
 public class Spalte {
 
-	private int leftX;
+	private float leftX;
 	private String columnName;
 	private List<Epic> epics;
 
 	public Spalte(float f) {
+		leftX = f;
 	}
 
-	public int getLeftX() {
+	public float getLeftX() {
 		return leftX;
 	}
 
-	public void setLeftX(int leftX) {
+	public void setLeftX(float leftX) {
 		this.leftX = leftX;
 	}
 	
