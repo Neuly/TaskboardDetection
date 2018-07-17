@@ -7,7 +7,7 @@ public class ExcelExporter implements Exporter {
 
 	@Override
 	public void writeTaskboardToFile(Taskboard taskboard, String fileName) {
-		System.out.println("Exporting Axel");
+		
 	}
 	
 	

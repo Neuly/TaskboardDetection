@@ -21,6 +21,7 @@ public class TaskboardErkennung {
 
 	public void run() {
 		ImageInput imageInput = new WebcamSignal();
+		
 		Bild bild = imageInput.captureImage();
 
 		SpaltenErkenner kantenErkenner = new SpaltenErkenner();
