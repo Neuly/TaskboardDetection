@@ -29,6 +29,24 @@ Am Besten den folgenden Release auschecken. Hier sind nur die automatischen Test
 ```
 mvn test
 ```
+## Aufgaben
+Die allgemeine Aufgabe ist es eine Taskboarderkennung zu ermöglichen. Das Projekt unterstützt durch allgemeine Unit Tests ob die Implementierung korrekt ist. Die Grundmodelle und Interfaces sind bereits vorhanden. 
+
+### Aufgabe 1
+Natürlich muss das Bild erst gescannt werden, dafür muss eine Webcam eingebunden werden. 
+
+### Aufgabe 2
+Verwenden Sie Canny Edge Detection um Kanten sauber zu erkennen.
+
+### Aufgabe 3
+Implementieren Sie einen QR Code Scanner, welcher die Tasks erkennt. Es sollten mehrere QR Codes pro Bild erkannt werden können.
+
+### Aufgabe 4
+Aus dem Taskboard Objekt, welches in der vorherigen Aufgabe erstellt werden sollte, muss nun ein Excel erstellt werden.
+
+### Aufgabe 5
+Das Drücken eines Buttons soll den gesamten Prozess auslösen. Implementieren Sie entsprechendes auf ihrem Raspberry Pi. Berücksichtigen Sie, dass ihre Implementierung automatisch getestet werden sollte.
+
 ## Authors
 
 * **Philipp "Neuly" Neulinger** 
