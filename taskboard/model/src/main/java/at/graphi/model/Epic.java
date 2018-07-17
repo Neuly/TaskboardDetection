@@ -19,7 +19,7 @@ public class Epic {
 
 	@Override
 	public String toString() {
-		return epicText.toString();
+		return epicText;
 	}
 
 }
