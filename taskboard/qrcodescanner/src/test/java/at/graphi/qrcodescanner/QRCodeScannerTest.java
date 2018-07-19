@@ -33,10 +33,29 @@ public class QRCodeScannerTest {
 	@Test
 	public void verifyThatInSampleImageAre3QRCodes() throws IOException {
 		BufferedImage bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/qrcodes_multiple.png"));
+
 		Taskboard taskboard = qrCodeScanner.generateTaskboard(new Bild(bufferedImage), createSpalten());
+
 		assertThat(taskboard.getSpalten()).hasSize(2);
 		assertThat(taskboard.getSpalten().get(1).getEpics().get(0)).isEqualToComparingFieldByField(new Epic("Demo2"));
-		assertThat(taskboard.getSpalten().get(0).getEpics()).extracting("epicText").contains("Demo3","Demo1");
+		assertThat(taskboard.getSpalten().get(0).getEpics()).extracting("epicText").contains("Demo3", "Demo1");
+
+		taskboard.getSpalten().stream().forEach(s -> s.getEpics().stream()
+				.forEach(e -> System.out.println("Spalte:" + s.getLeftX() + " " + e.getEpicText())));
+	}
+
+	@Test
+	public void verifyThatGedrehtImageAre3QRCodes() throws IOException {
+		BufferedImage bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/gedreht.png"));
+
+		Taskboard taskboard = qrCodeScanner.generateTaskboard(new Bild(bufferedImage), createSpalten());
+
+		assertThat(taskboard.getSpalten()).hasSize(2);
+		assertThat(taskboard.getSpalten().get(0).getEpics()).extracting("epicText").contains("Demo3");
+		assertThat(taskboard.getSpalten().get(1).getEpics()).extracting("epicText").contains("Demo2", "Demo1");
+
+		taskboard.getSpalten().stream().forEach(s -> s.getEpics().stream()
+				.forEach(e -> System.out.println("Spalte:" + s.getLeftX() + " " + e.getEpicText())));
 	}
 
 	private List<Spalte> createSpalten() {
