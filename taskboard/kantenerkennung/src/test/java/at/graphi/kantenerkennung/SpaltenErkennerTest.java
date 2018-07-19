@@ -23,7 +23,7 @@ public class SpaltenErkennerTest {
 	public void testBestimmeSpalten() throws IOException {
 		BufferedImage bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/sample.png"));
 		List<Spalte> bestimmeSpalten = spaltenErkenner.bestimmeSpalten(new Bild(bufferedImage));
-		assertThat(bestimmeSpalten).hasSize(4);
+		assertThat(bestimmeSpalten).hasSize(5);
 		assertThat(bestimmeSpalten).extracting("leftX").contains(84.29288f, 475.64056f, 321.89682f, 214.07654f);
 	}
 
