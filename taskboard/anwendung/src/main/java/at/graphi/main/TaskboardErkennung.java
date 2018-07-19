@@ -3,6 +3,8 @@ package at.graphi.main;
 import java.util.List;
 
 import at.graphi.exporter.ExcelExporter;
+import at.graphi.exporter.SystemOutWrapper;
+import at.graphi.exporter.Utf8WriterFactory;
 import at.graphi.interfaces.CodeScanner;
 import at.graphi.interfaces.Exporter;
 import at.graphi.interfaces.ImageInput;
@@ -30,7 +32,7 @@ public class TaskboardErkennung {
 		CodeScanner codeScanner = new QRCodeScanner();
 		Taskboard taskboard = codeScanner.generateTaskboard(bild, bestimmteSpalten);
 
-		Exporter exporter = new ExcelExporter();
+		Exporter exporter = new ExcelExporter(new Utf8WriterFactory(), new SystemOutWrapper());
 		exporter.writeTaskboardToFile(taskboard, "Axel.xls");
 		System.out.println("Ausgezeichnet!");
 	}
