@@ -1,5 +1,6 @@
 package at.graphi.webcamsignal;
 
+import java.awt.Dimension;
 import java.util.List;
 
 import com.github.sarxos.webcam.Webcam;
@@ -12,17 +13,24 @@ public class WebcamSignal implements ImageInput {
 	private Webcam webcam;
 
 	public WebcamSignal() {
-		this.webcam = Webcam.getDefault();
-		this.webcam.open();
+		for (Webcam wc : Webcam.getWebcams()) {
+			if (wc.toString().contains("Logitech"))
+				this.webcam = wc;
+		}
 	}
 
 	public WebcamSignal(Webcam webcam) {
-		this.webcam = webcam;
-		this.webcam.open();
+		for (Webcam wc : Webcam.getWebcams()) {
+			if (wc.toString().contains("Logitech"))
+				this.webcam = wc;
+		}
+		
 	}
 
 	@Override
 	public Bild captureImage() {
+		webcam.setViewSize(new Dimension(640, 480));
+		this.webcam.open();
 		return new Bild(webcam.getImage());
 	}
 
