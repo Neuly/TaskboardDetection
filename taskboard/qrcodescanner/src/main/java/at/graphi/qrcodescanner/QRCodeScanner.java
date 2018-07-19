@@ -31,6 +31,11 @@ public class QRCodeScanner implements CodeScanner {
 				new HybridBinarizer(new BufferedImageLuminanceSource(bild.getImage())));
 
 		Result[] qrCodeResult = readQRCodesFromImage(binaryBitmap);
+		
+		if(qrCodeResult == null) {
+			return new Taskboard(spalten);
+		}
+			
 		List<Result> results = Arrays.asList(qrCodeResult);
 
 		for (Result result : results) {
@@ -58,6 +63,7 @@ public class QRCodeScanner implements CodeScanner {
 			return new QRCodeMultiReader().decodeMultiple(binaryBitmap);
 		} catch (NotFoundException e) {
 			e.printStackTrace();
+			System.out.println("Keine Epics gefunden!!!!");
 		}
 		return null;
 	}
