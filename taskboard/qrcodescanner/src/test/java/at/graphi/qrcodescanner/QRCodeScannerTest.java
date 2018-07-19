@@ -58,6 +58,14 @@ public class QRCodeScannerTest {
 				.forEach(e -> System.out.println("Spalte:" + s.getLeftX() + " " + e.getEpicText())));
 	}
 
+	@Test
+	public void verifyThatScannerSurvivesEmptyImage() throws IOException {
+		BufferedImage bufferedImage = ImageIO.read(this.getClass().getResourceAsStream("/empty.png"));
+
+		Taskboard taskboard = qrCodeScanner.generateTaskboard(new Bild(bufferedImage), createSpalten());
+		assertThat(taskboard.getSpalten().get(0).getEpics()).isEmpty();
+	}
+
 	private List<Spalte> createSpalten() {
 		return Arrays.asList(new Spalte(800), new Spalte(1600));
 	}

@@ -25,8 +25,8 @@ public class TaskboardErkennung {
 		new TaskboardErkennung().run();
 	}
 
+	
 	public void run() throws IOException {
-
 		ImageInput imageInput = new WebcamSignal();
 
 		Bild bild = imageInput.captureImage();
