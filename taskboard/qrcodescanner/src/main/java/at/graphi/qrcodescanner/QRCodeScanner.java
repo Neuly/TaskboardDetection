@@ -2,6 +2,7 @@ package at.graphi.qrcodescanner;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.NotFoundException;
@@ -21,6 +22,8 @@ public class QRCodeScanner implements CodeScanner {
 
 	@Override
 	public Taskboard generateTaskboard(Bild bild, List<Spalte> spalten) {
+		checkInput(bild, spalten);
+
 		Taskboard board = new Taskboard();
 		board.setSpalten(spalten);
 
@@ -32,13 +35,22 @@ public class QRCodeScanner implements CodeScanner {
 
 		for (Result result : results) {
 			ResultPoint[] resultPoints = result.getResultPoints();
-
 			addEpicToSpalte(spalten, result, calculateMeanPosition(resultPoints));
 		}
 
 		board.setSpalten(spalten);
 
 		return board;
+	}
+
+	private void checkInput(Bild bild, List<Spalte> spalten) {
+		if (!Optional.ofNullable(bild).isPresent()) {
+			new IllegalArgumentException("Bild ist null!");
+		}
+
+		if (!Optional.ofNullable(spalten).isPresent()) {
+			new IllegalArgumentException("Spalten ist null!");
+		}
 	}
 
 	private Result[] readQRCodesFromImage(BinaryBitmap binaryBitmap) {

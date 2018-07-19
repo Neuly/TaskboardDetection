@@ -19,6 +19,10 @@ public class TaskboardErkennung {
 		new TaskboardErkennung().run();
 	}
 
+	
+	public void gpio() {
+	}
+	
 	public void run() {
 		ImageInput imageInput = new WebcamSignal();
 		Bild bild = imageInput.captureImage();
